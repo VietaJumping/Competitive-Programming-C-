@@ -11,7 +11,7 @@
 //[l, mid] therefore we do at most (log n) iterations, until we find i s.t. k = a[i]
 //or we "prove" that there's no such i.
 
-//Another way to solve this problem is using Coordenate Compression (since a[i] could 
+//Another way to solve this problem is using Coordinate Compression (since a[i] could 
 //be larger than 10^9 or something like that) and using an array to register every 
 //integer inside the array.
 
