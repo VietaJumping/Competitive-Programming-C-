@@ -1,13 +1,13 @@
 //The classical Knapsack problem, you are a thief, and during a robbery, you found N <= 10^4 objects each one having a different value
-//but you brought a bag that can only support a weight of W <= 10^4 and want to find out the largest amount you can make off of this robbery
+//but you brought a bag that can only support a weight of W <= 10^4 so you want to find out the largest amount you can make off of this robbery
 //Note that the solution isn't as straightforward as a greedy algorithm, for example, sorting by the value of each object and picking the
-//most valuable objects won't work with: N = 3, W = 4; (the pairs are given by (weight_i, value_i) where 1 <= i <= N) (4, 3) (2 ,2) (2, 2)
+//most valuable objects won't work with: N = 3, W = 4; (the pairs are given by (weight_i, value_i) where 0 <= i <= N-1) (4, 3) (2 ,2) (2, 2)
 //the greedy algorithm would leave us with the pair (4, 3) a total value of 3, but the correct solution would be picking (2, 2) and (2, 2)
 //which would give us a total value of 4.
 //The quite short yet tricky solution hereby presented requires Dynamic Programming and has a time complexity of O(N*W)
 
 #include <bits/stdc++.h>
-#define maxn 10100
+#define maxn 10010
 
 using namespace std;
 
@@ -26,7 +26,7 @@ int knapsack(int obj, int weight){
 
     //Now we split the problem into two cases:
     //If we pick the i-th object, and if we don't.
-    //If we can actually pick it, we just return the maximum of both values,
+    //If we can actually pick it, we just return the maximum between both values,
     //otherwise we return the maximum value we can obtain if we don't pick it.
 
     int dont_pick = knapsack(obj+1, weight);
@@ -43,7 +43,7 @@ int knapsack(int obj, int weight){
 int main() {
 
     //to prevent our recursive function from calculating the same thing twice and therefore doing more recursive calls,
-    //we simply let every value of the matrix be a constant that can't be obtainable as a result of random choices
+    //we simply let every value of the matrix be a constant that can't be obtained as a result of random choices
     //for example, in this specific case it's impossible to have any set of items whose values add up to -1
 
     memset(dp, -1, sizeof(dp));
