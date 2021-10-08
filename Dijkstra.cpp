@@ -1,8 +1,8 @@
-//Dijkstra's Algorithm is used to determine the shortest path from a given node A to every other node of the graph
-//The Algorithm basically keeps a priority queue updating the minimum distance between a pair of vertices, whenever
+//Dijkstra's Algorithm is used to determine the shortest path from a given node A to each other node of the graph.
+//The Algorithm basically keeps a priority queue updating the minimum distance between A to the other nodes; whenever
 //the new path between the current node (v) and A gives a smaller distance "d" than the one stored in an array, the pair
-//(-d, v) is put into the priority queue, because we must update the distance for all the nodes connected to v and
-//-d as we want to prioritize the smaller distance, as the priority queue prioritizes the larger first element.
+//(-d, v) is inserted in the priority queue, because we must update the distance for all the nodes connected to v and
+//-d as we want to prioritize the smaller distance (the priority queue prioritizes the larger first element of the pair).
 //Time Complexity: O(n + m.log m) where m = #edges, n = #nodes.
 
 #include <bits/stdc++.h>
