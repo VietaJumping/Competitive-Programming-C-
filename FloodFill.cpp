@@ -13,7 +13,7 @@ vector < int > neighbors[maxn];
 
 //Depth First Search:
 
-//The array visited basically register when a node is visited, if the current node's
+//The array visited basically registers when a node is visited, if the current node's
 //child hasn't been visited, we do the DFS for the child, if the graph is connected
 //it's easy to see that we'll eventually visit all nodes, and we always go straight to
 //the deepest node. 
@@ -33,8 +33,8 @@ void DFS(int u){
 
 //Breadth First Search:
 
-//Similarly, the array processed register whether or not a node has been processed during
-//the algorithm. If the current node's child hasn't been processed, we push it into the queue, 
+//Similarly, the array processed registers whether or not a node has been processed during
+//the algorithm. If the current node's child hasn't been processed, we push it in the queue, 
 //so that we go through all the node's children first, unlike the DFS, showing that the BFS 
 //algorithm is indeed a Breadth First Search.
 
